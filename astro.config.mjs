@@ -7,4 +7,11 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://example.com",
   integrations: [mdx(), sitemap()],
+  markdown: {
+    rehypePlugins: [
+      "rehype-slug",
+      ["rehype-autolink-headings", { behavior: "prepend" }],
+      ["rehype-toc", { headings: ["h2", "h3"] }],
+    ],
+  },
 });
