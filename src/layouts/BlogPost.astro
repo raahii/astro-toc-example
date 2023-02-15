@@ -7,7 +7,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, showToc } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,6 +26,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         font-style: italic;
       }
     </style>
+    {!showToc && (
+      <style is:global>
+        .toc { display: none; }
+      </style>
+    )}
   </head>
 
   <body>

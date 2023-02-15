@@ -65,3 +65,21 @@ blockquote {
   margin: 0px;
   font-style: italic;
 }
+
+.toc {
+  border: 2px solid #efefef;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+  padding-left: 32px;
+}
+
+.toc ol li {
+  counter-increment: toc;
+}
+
+.toc ol li:before {
+  content: counters(toc, ".") " ";
+}
