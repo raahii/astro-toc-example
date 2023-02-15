@@ -10,7 +10,20 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       "rehype-slug",
-      ["rehype-autolink-headings", { behavior: "prepend" }],
+      [
+        "rehype-autolink-headings",
+        {
+          behavior: "append",
+          content: {
+            type: "element",
+            tagName: "i",
+            properties: {
+              className: ["heading-anchor", "fa", "fa-link"],
+            },
+            children: [],
+          },
+        },
+      ],
       ["rehype-toc", { headings: ["h2", "h3"] }],
     ],
   },

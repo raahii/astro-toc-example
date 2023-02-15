@@ -83,3 +83,16 @@ blockquote {
 .toc ol li:before {
   content: counters(toc, ".") " ";
 }
+
+.heading-anchor {
+  visibility:hidden;
+  font-size: 1rem;
+  margin-left: 0.3rem;
+}
+
+h2:hover .heading-anchor {
+  visibility:visible;
+}
+h3:hover .heading-anchor {
+  visibility:visible;
+}
